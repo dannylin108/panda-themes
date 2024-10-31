@@ -30,7 +30,7 @@ const inlineIcon = css({
 });
 
 
-const wuXingHanZi = [['wood', 'Дерево'], ['fire', 'Огонь'], ['earth', 'Земля'], ['metal', 'Металл'], ['water', 'Вода']];
+const wuXingHanZi = [['wood', 'Wood'], ['fire', 'Fire'], ['earth', 'Earth'], ['metal', 'Metal'], ['water', 'Water']];
 
 const items = wuXingHanZi.map((hanzi, i) => ({
     label: hanzi[1],
@@ -60,7 +60,7 @@ const ColorSelect = () => {
         }}
         collection={collection}
     >
-        <Select.Label>Палитра</Select.Label>
+        <Select.Label>Palette</Select.Label>
         <Select.Control mt='0.5' minW='200px'>
             <Select.Trigger>
                 <span>
