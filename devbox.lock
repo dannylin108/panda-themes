@@ -1,6 +1,54 @@
 {
   "lockfile_version": "1",
   "packages": {
+    "biome@latest": {
+      "last_modified": "2024-10-18T06:41:56Z",
+      "resolved": "github:NixOS/nixpkgs/c858402c2a629211153137fb8d39be9fde4694ff#biome",
+      "source": "devbox-search",
+      "version": "1.9.3",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/3swlj04lyx5p8xd9b5hnxllz44pdz4cb-biome-1.9.3",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/3swlj04lyx5p8xd9b5hnxllz44pdz4cb-biome-1.9.3"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/1fj7dd4vv18cgq1q1r8rwi9wslhcpsmh-biome-1.9.3",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/1fj7dd4vv18cgq1q1r8rwi9wslhcpsmh-biome-1.9.3"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/d6j8g0k6jd2crngf9k07nvvz86qjiira-biome-1.9.3",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/d6j8g0k6jd2crngf9k07nvvz86qjiira-biome-1.9.3"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/nzmk9ah6611izyyldip24ffygivim0b2-biome-1.9.3",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/nzmk9ah6611izyyldip24ffygivim0b2-biome-1.9.3"
+        }
+      }
+    },
     "nodejs@20": {
       "last_modified": "2024-08-14T11:41:26Z",
       "plugin_version": "0.0.2",
