@@ -1,6 +1,5 @@
-import { createSignal, Index } from "solid-js";
+import { createEffect, createSignal, Index } from "solid-js";
 import { Dynamic, Portal } from "solid-js/web";
-import { Text } from "./ui/text";
 import { Select } from "./ui/select";
 
 import IconCheck from '~icons/tabler/check';
@@ -12,6 +11,7 @@ import NotoWaterWave from '~icons/noto/water-wave';
 import NotoPick from '~icons/noto/pick';
 import { css } from "styled-system/css";
 import { createListCollection } from "@ark-ui/solid";
+import { getTheme, injectTheme, type ThemeName} from 'styled-system/themes'
 
 
 const wuXingEmoji = [
@@ -30,7 +30,7 @@ const inlineIcon = css({
 });
 
 
-const wuXingHanZi = [['木', 'Дерево'], ['火', 'Огонь'], ['土', 'Земля'], ['金', 'Металл'], ['水', 'Вода']];
+const wuXingHanZi = [['wood', 'Дерево'], ['fire', 'Огонь'], ['earth', 'Земля'], ['metal', 'Металл'], ['water', 'Вода']];
 
 const items = wuXingHanZi.map((hanzi, i) => ({
     label: hanzi[1],
@@ -44,9 +44,20 @@ const ColorSelect = () => {
 
     const collection = createListCollection({ items });
 
+    createEffect(async () => {
+        const themeName = wuXingHanZi[value()][0] as ThemeName | 'wood'
+        if (themeName !== 'wood') {
+            const theme = await getTheme(themeName);        
+            injectTheme(document.documentElement, theme)
+        }
+        else delete document.documentElement.dataset.pandaTheme
+    });
+
     return <Select.Root size='sm'
         defaultValue={[items[0].value]}
-        onValueChange={(value) => setValue(Number(value.value[0]))}
+        onValueChange={(value) => {
+            setValue(Number(value.value[0]))
+        }}
         collection={collection}
     >
         <Select.Label>Палитра</Select.Label>

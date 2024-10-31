@@ -2,7 +2,7 @@ import { Center, Container, VStack } from "styled-system/jsx";
 import ColorSelect from "./components/ColorSelect";
 import { Button } from "./components/ui/button";
 
-export const App = () => {
+const App = () => {
     return (
         <Container py={{ base: "16", md: "24" }}>
             <VStack gap='4'>
@@ -12,3 +12,5 @@ export const App = () => {
         </Container>
     );
 };
+
+export default App;
